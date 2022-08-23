@@ -1,0 +1,73 @@
+﻿<Window x:Class="SearchEngine.App.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SearchEngine.App"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Window.Resources>
+        <ResourceDictionary Source="StylesMainWindow.xaml"/>
+    </Window.Resources>
+    
+   
+    
+
+    <Grid x:Name="MainPanel">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        
+ <DockPanel>
+        <ToolBarTray DockPanel.Dock="Top" Grid.ColumnSpan="2">
+            <ToolBar>
+                <Button Command="New" Content="New" />
+                <Button Command="Open" Content="Open" />
+                <Button Command="Save" Content="Save" />
+            </ToolBar>
+            <ToolBar>
+                <Button Command="Cut" Content="Cut" />
+                <Button Command="Copy" Content="Copy" />
+                <Button Command="Paste" Content="Paste" />
+            </ToolBar>
+        </ToolBarTray>
+
+    </DockPanel>
+        
+        <StackPanel x:Name="LeftPanel" Grid.Column="0">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="40"/> 
+                    <RowDefinition Height="200"/>                     
+                    <RowDefinition Height="40"/>                    
+                    <RowDefinition Height="40"/>                     
+                </Grid.RowDefinitions>
+                 <TextBox x:Name="DirToSearchTextBox" Grid.Row="0">
+               DirToSearch
+                </TextBox>   
+                  <TextBox x:Name="DirToSaveTextBox" Grid.Row="1">
+               DirToSave
+                </TextBox>               
+                <TextBox x:Name="ReportWindowTextBox" Grid.Row="2">
+               ReportWindow
+                </TextBox>                
+                <TextBox x:Name="ProgressBarTextBox" Grid.Row="3">
+               ProgressBar
+                </TextBox>                     
+                <TextBox x:Name="ButtonsTextBox" Grid.Row="4">
+               Buttons
+                </TextBox>                    
+            </Grid>
+
+            
+        </StackPanel>
+        <StackPanel x:Name="RigthPanel" Grid.Column="1">
+
+
+        </StackPanel>
+
+
+    </Grid>
+</Window>
