@@ -29,21 +29,26 @@
                     <RowDefinition Height="40"/>                     
                 </Grid.RowDefinitions>
                 <StackPanel Grid.Row="0" Orientation="Vertical">
-                    <Label Content="Directory to search:" />
+                    <Label Content="Directory to search:" Style="{DynamicResource StyleLable}"/>                        
                     <Canvas>
-                        <TextBox x:Name="DirToSearchTextBox" Grid.Row="0" Style="{DynamicResource ReportWindowTextBox}" Canvas.Left="5">                    
+                        <TextBox x:Name="DirToSearchTextBox" Style="{DynamicResource DirToSearchTextBox}" Canvas.Left="5">                    
                             DirToSearch
                         </TextBox>
                         <Button x:Name="ChooseSearchDirectoryButton" Content="Choose" Style="{DynamicResource StyleButtonChoose}" Canvas.Right="5"/>
                     </Canvas>
-                        
-                   
                 </StackPanel>
-
+                
+                <StackPanel Grid.Row="1" Orientation="Vertical">
+                    <Label Content="Directory to copy:" Style="{DynamicResource StyleLable}"/>
+                    <Canvas>
+                        <TextBox x:Name="DirToCopyTextBox" Style="{DynamicResource DirToCopyTextBox}" Canvas.Left="5">                    
+                            DirToSearch
+                        </TextBox>
+                        <Button x:Name="ChooseCopyDirectoryButton" Content="Choose" Style="{DynamicResource StyleButtonChoose}" Canvas.Right="5"/>
+                    </Canvas>
+                </StackPanel>
   
-                  <TextBox x:Name="DirToSaveTextBox" Grid.Row="1" Style="{DynamicResource ReportWindowTextBox}">
-               DirToSave
-                </TextBox>               
+             
                 <TextBox x:Name="ReportWindowTextBox" Grid.Row="2" Style="{DynamicResource ReportWindowTextBox}">
                ReportWindow
                 </TextBox>                

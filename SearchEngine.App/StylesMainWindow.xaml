@@ -113,10 +113,16 @@
             </Setter.Value>
         </Setter>
          <Setter Property="Width" Value="60"/>
+          <Setter Property="Height" Value="30"/>         
          <Setter Property="HorizontalAlignment" Value="Right"/>
-    </Style>   
+    </Style>
 
+    <Style x:Key="StyleLable" TargetType="Label"
+       BasedOn="{StaticResource StyleDefault}">
+        <Setter Property="TextBlock.FontWeight" Value="DemiBold"/>
+        <Setter Property="Margin" Value="5,0,0,0"/>
 
+    </Style>
 
 
 
@@ -133,7 +139,15 @@
         <Setter Property="TextWrapping" Value="NoWrap"/>
 
     </Style>
+    
+    <Style x:Key="DirToCopyTextBox" TargetType="TextBox"
+           BasedOn="{StaticResource StyleDefault}">
+        <Setter Property="HorizontalAlignment" Value="Left"/>        
+        <Setter Property="Width" Value="300"/>
+        <Setter Property="TextWrapping" Value="NoWrap"/>
 
+    </Style>
+    
 
 
     <Style x:Key="ReportWindowTextBox" TargetType="TextBox" BasedOn="{StaticResource StyleDefault}">
