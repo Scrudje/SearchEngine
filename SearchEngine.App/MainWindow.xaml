@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SearchEngine.App"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="500" Width="800">
     <Window.Resources>
         <ResourceDictionary Source="StylesMainWindow.xaml"/>
     </Window.Resources>
@@ -18,47 +18,47 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        
- <DockPanel>
-        <ToolBarTray DockPanel.Dock="Top" Grid.ColumnSpan="2">
-            <ToolBar>
-                <Button Command="New" Content="New" />
-                <Button Command="Open" Content="Open" />
-                <Button Command="Save" Content="Save" />
-            </ToolBar>
-            <ToolBar>
-                <Button Command="Cut" Content="Cut" />
-                <Button Command="Copy" Content="Copy" />
-                <Button Command="Paste" Content="Paste" />
-            </ToolBar>
-        </ToolBarTray>
-
-    </DockPanel>
-        
+            
         <StackPanel x:Name="LeftPanel" Grid.Column="0">
             <Grid>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="40"/>
-                    <RowDefinition Height="40"/> 
+                    <RowDefinition Height="80"/>
+                    <RowDefinition Height="80"/> 
                     <RowDefinition Height="200"/>                     
                     <RowDefinition Height="40"/>                    
                     <RowDefinition Height="40"/>                     
                 </Grid.RowDefinitions>
-                 <TextBox x:Name="DirToSearchTextBox" Grid.Row="0">
-               DirToSearch
-                </TextBox>   
-                  <TextBox x:Name="DirToSaveTextBox" Grid.Row="1">
+                <StackPanel Grid.Row="0" Orientation="Vertical">
+                    <Label Content="Directory to search:" />
+                    <Canvas>
+                        <TextBox x:Name="DirToSearchTextBox" Grid.Row="0" Style="{DynamicResource ReportWindowTextBox}" Canvas.Left="5">                    
+                            DirToSearch
+                        </TextBox>
+                        <Button x:Name="ChooseSearchDirectoryButton" Content="Choose" Style="{DynamicResource StyleButtonChoose}" Canvas.Right="5"/>
+                    </Canvas>
+                        
+                   
+                </StackPanel>
+
+  
+                  <TextBox x:Name="DirToSaveTextBox" Grid.Row="1" Style="{DynamicResource ReportWindowTextBox}">
                DirToSave
                 </TextBox>               
-                <TextBox x:Name="ReportWindowTextBox" Grid.Row="2">
+                <TextBox x:Name="ReportWindowTextBox" Grid.Row="2" Style="{DynamicResource ReportWindowTextBox}">
                ReportWindow
                 </TextBox>                
-                <TextBox x:Name="ProgressBarTextBox" Grid.Row="3">
+                <TextBox x:Name="ProgressBarTextBox" Grid.Row="3" Style="{DynamicResource ReportWindowTextBox}">
                ProgressBar
-                </TextBox>                     
-                <TextBox x:Name="ButtonsTextBox" Grid.Row="4">
-               Buttons
-                </TextBox>                    
+                </TextBox>
+                <StackPanel Orientation="Horizontal" Grid.Row="4">
+                    <Button x:Name="ButtonStart" Content="Start"
+                    Style="{DynamicResource StyleButtonStart}" Click="ButtonStart_Click"/>
+                    <Button Content="Pause"
+                    Style="{DynamicResource StyleButtonPause}" Click="ButtonPause_Click"/>
+                    <Button Content="Stop"
+                    Style="{DynamicResource StyleButtonStop}" Click="ButtonStop_Click"/>                    
+                </StackPanel>
+                   
             </Grid>
 
             

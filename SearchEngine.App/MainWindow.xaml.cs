@@ -24,5 +24,20 @@ namespace SearchEngine.App
         {
             InitializeComponent();
         }
+
+        private void ButtonStart_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ButtonPause_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ButtonStop_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
